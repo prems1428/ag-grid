@@ -5,18 +5,25 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AgGridModule } from 'ag-grid-angular';
 import {HttpClientModule} from '@angular/common/http';
-import { NotificationsComponent } from './notifications/notifications.component'
+import { FormsModule } from '@angular/forms';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MyCellComponent } from './my-cell/my-cell.component';
+import { RowGroupComponent } from './row-group/row-group.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    NotificationsComponent
+    MyCellComponent,
+    RowGroupComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AgGridModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

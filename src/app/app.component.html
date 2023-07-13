@@ -1,8 +1,32 @@
+<!-- <div>
+    <input [(ngModel)] ="text">
+    <button (click)="onSearch()">Search</button>
+</div><br>
 <div>
-    <label>Enter Text :</label>
-    <input type="text" #textmessage>
-    <button (click)="onTextSubmit(textmessage.value)">Submit Text</button>
-</div><br><br><hr>
+    <button (click)="onClear()">Clear Selection</button>
+</div><br>
 <div>
-    <app-notifications></app-notifications>
+    <label>Export As : </label>
+    <select name="types" [(ngModel)]="exportType">
+        <option value="csv" >CSV</option>
+        <option value="xlsx" >xlsx</option>
+        <option value="pdf" >PDF</option>
+    </select>
+    <button (click)="onDownload()">Download</button>
 </div>
+
+
+<ag-grid-angular style="width: 100% ; height: 500px;" 
+class="ag-theme-alpine"
+[rowData] = "row"
+[columnDefs]="col"
+(gridReady)="gridReady($event)"
+[defaultColDef]="default"
+[rowSelection]="'multiple'"
+[pagination]="pagination"
+[paginationPageSize]="pagesize"
+[animateRows]="true"
+[components]="components"
+></ag-grid-angular> -->
+
+<app-row-group></app-row-group>

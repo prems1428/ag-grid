@@ -1,0 +1,54 @@
+<div style="margin-bottom: 1rem;">
+    <button (click)="onYearFirst()">Year First</button>
+    <button (click)="onYearLast()">Year Last</button>
+    <button (click)="onSwapFirstTwo()">Swap First Two</button>
+    <button (click)="onPrintColumn()">Print Columns</button>
+    <button (click)="exClude()">Exclude Medal Columns</button>
+    <button (click)="inClude()">Include Medal Columns</button>
+    <button (click)="setHeaderNames()">Set Header Names</button>
+    <button (click)="removeHeaderNames()">Remove Header Names</button>
+    <button (click)="setValueFormatters()">Set Value Formatters</button>
+    <button (click)="removeValueFormatters()">Remove Value Formatters</button>
+  </div><br>
+  <div style="margin-bottom: 1rem;">
+    <button (click)="onRowGroupOn()">Row Group On</button>
+    <button (click)="onRowGroupOff()">Row Group Off</button>
+    <button (click)="onSort()">Sort</button>
+  </div><br>
+  <div *ngIf="isShow">
+    <p> {{colNames}} </p>
+  </div><br>
+  <div>
+    <input [(ngModel)] ="text">
+    <button (click)="onSearch()">Search</button>
+</div><br>
+<div>
+    <button (click)="onClear()">Clear Selection</button>
+</div><br>
+  <div>
+    <label>Export As : </label>
+    <select name="types" [(ngModel)]="exportType">
+        <option value="csv" >CSV</option>
+        <option value="xlsx" >xlsx</option>
+        <option value="pdf" >PDF</option>
+    </select>
+    <button (click)="onDownload()">Download</button>
+</div>
+<ag-grid-angular id="myGrid"
+style="width: 100%; height : 500px"
+class="ag-theme-alpine"
+[rowData]="rowData"
+[columnDefs]="columnDef"
+(gridReady)="gridReady($event)"
+[defaultColDef]="defaultDef"
+[animateRows]="true"
+[rowGroupPanelShow]="rowGroupPanelShow"
+[pivotPanelShow]="pivotPanelShow"
+[sideBar]="sideBar"
+[enableFillHandle]="true"
+[enableRangeSelection]="true"
+>
+
+</ag-grid-angular>
+
+
